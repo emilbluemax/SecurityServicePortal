@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Guard Management System</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container text-center">
+		
+		<h3>Are you sure you want to REJECT the posting ??</h3>
+		<hr>
+		<form action="#" th:action="@{/saveGuard}" th:object="${Guard}" method="POST">
+			<input type="hidden" th:field="*{id}" />
+			<input type="hidden" th:field="*{ssn}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{firstName}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{lastName}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{email}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{Salary}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{address}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{experience}" class="form-control mb-4 col-4">
+			<input type="hidden" th:field="*{password}" placeholder="Password" class="form-control mb-4 col-4"> 
+			<input type="hidden" th:field="*{location}" placeholder="Location" class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-info col-2"> Reject </button>
+		</form>
+		
+		<hr>
+	
+	</div>
+</body>
+</html>

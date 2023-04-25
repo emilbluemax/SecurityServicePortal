@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Guard Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Add Message</h1>
+		<hr>
+		<h2>Send message</h2>
+
+		<form action="#" th:action="@{/saveMessage}" th:object="${message}" method="POST">
+		
+				<input type="text" th:field="*{message_field}" placeholder="Message" class="form-control mb-4 col-4">
+				
+				<button type="submit" class="btn btn-info col-2"> Send Message</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/admin}"> Back to Admin page</a>
+	</div>
+</body>
+</html>

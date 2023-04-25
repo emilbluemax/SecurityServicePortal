@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Guard - Event Management </title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+
+<div class="container my-2">
+	<h1>Event List</h1>
+	
+	<a th:href = "@{/showNewEventForm}" class="btn btn-primary btn-sm mb-3"> Add Event </a>
+	<a th:href = "@{/userHome}" class="btn btn-primary btn-sm mb-3"> Homepage </a>
+	
+	<table border="1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>Event Name</th>
+				<th>Event Date</th>
+				<th>Number of Guards</th>
+				<th>Event Time</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="event : ${listEvent}">
+				<td th:text = "${event.name}"></td>
+				<td th:text = "${event.date}"></td>
+				<td th:text = "${event.noGuard}"></td>
+				<td th:text = "${event.time}"></td>
+				<td>
+					<a th:href="@{/showFormForUpdate/{id}(id=${event.id})}" class="btn btn-primary">Update</a>
+					<a th:href="@{/deleteEvent/{id}(id=${event.id})}" class="btn btn-danger">Delete</a>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+</body>
+</html>

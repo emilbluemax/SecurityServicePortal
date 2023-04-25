@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Guard Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Guard Management System</h1>
+		<hr>
+		<h2>Save Guard</h2>
+
+		<form action="#" th:action="@{/saveGuard}" th:object="${Guard}"
+			method="POST">
+			<input type="text" th:field="*{ssn}"
+				placeholder="Guard SSN" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{firstName}"
+				placeholder="Guard First Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{lastName}"
+				placeholder="Guard Last Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{email}"
+				placeholder="Guard Email" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{Salary}"
+				placeholder="Salary" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{address}"
+				placeholder="Guard Address" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{experience}"
+				placeholder="Experience" class="form-control mb-4 col-4">
+				<input type="password" th:field="*{password}"
+				placeholder="Password" class="form-control mb-4 col-4">
+				
+				<button type="submit" class="btn btn-info col-2"> Save Guard</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/admin}"> Back to Admin page</a>
+	</div>
+</body>
+</html>

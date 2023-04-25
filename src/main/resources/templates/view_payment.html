@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Guard Management System</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<div class="container my-2">
+	<h1>Payment List</h1>
+		<a th:href = "@{/admin}" class="btn btn-primary btn-sm mb-3"> Back </a>
+		<table border="1" class = "table table-striped table-responsive-md">
+			<thead> 
+				<tr>
+					<th>Transaction ID</th>
+					<th>Date </th>
+					<th>Card Number </th>
+					<th>Amount Paid </th>
+					<th>User ID </th>
+					<th>Event ID </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="payment: ${listpayment}">
+				    <td th:text="${payment.transaction_id}"></td>
+				    <td th:text="${payment.date}"></td>
+					<td th:text="${payment.card_number}"></td>
+					<td th:text="${payment.amount}"></td>
+					<td th:text="${payment.userId}"></td>
+					<td th:text="${payment.eventId}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+</html>
